@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+  body{
+    margin:0;
+    background: #191210;
+  }
+  .container{
+    width: 400px;
+    height: 300px;
+  }
+  .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .circle1{
+    border: 70px solid #ECA03D;
+    border-radius: 50%;
+  }
+  .circle2{
+    border: 50px solid #191210;
+    border-radius: 50%;
+  }
+  .circle3{
+    border: 25px solid #84271C;
+    border-radius: 50%;
+  }
+  .box{
+    width:100px;
+    height:100px;
+    background: white;
+    border-radius: 50%;
+  }
+  .left{
+    transform: translate(-150px,-50%);
+  }
+  .right{
+    transform: translate(50px,-50%);
+  }
+  .arc{
+    width: 60px;
+    height: 60px;
+    background: #191210;
+    border: 20px solid #ECA03D;
+    border-radius:50%;
+  }
+  .rectangle{
+    width:100%;
+    height:50%;
+    background:#191210;
+    position:absolute;
+    top:0;
+  }
+  .bottom{
+    transform: translateY(100%);
+  }
+  
+</style>
+	<title>div test</title>
+</head>
+<body>
+	
+  <div class="box center left">
+    <div class="arc"></div>
+    <div class="rectangle"></div>
+  </div>
+  <div class="box center right">
+  <div class="arc"></div>
+    <div class="rectangle bottom"></div>
+  </div>
+  <div class="circle1 center"></div>
+  <div class="circle2 center"></div>
+  <div class="circle3 center">
+    </div>
+</div>
+
+
+</body>
+</html>
