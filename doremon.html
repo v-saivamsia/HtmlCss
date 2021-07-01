@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doremon</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5d6b4;
+        box-sizing: border-box;
+      }
+      .center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .middle {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .doremon {
+        position: absolute;
+        display: block;
+        width: 400px;
+        height: 300px;
+        background-color: #f5d6b4;
+        margin: auto;
+        margin-top: 100px;
+      }
+      .face {
+        position: absolute;
+        background-color: #2d9cdb;
+        width: 175px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .body {
+        position: absolute;
+        background-color: #2d9cdb;
+        width: 125px;
+        height: 125px;
+        top: 100px;
+        z-index: 5;
+      }
+      .neck {
+        position: absolute;
+        width: 100%;
+        height: 29%;
+        background-color: #2d9cdb;
+        z-index: 1;
+      }
+      .neckband {
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background-color: red;
+        bottom: 0;
+        border-radius: 2px;
+      }
+      .mouthandnose {
+        position: inherit;
+        width: 95%;
+        height: 90px;
+        background: white;
+        transform: translate(-50%, -100%);
+        border: 0px solid transparent;
+        border-radius: 70px 70px 70px 70px;
+      }
+      .eyes {
+        position: absolute;
+        height: 30px;
+        width: 27px;
+        border-radius: 50%;
+        background: white;
+        transform: translateY(-50%);
+        border: 1px solid black;
+      }
+      .eyeball {
+        position: absolute;
+        width: 3px;
+        height: 5px;
+        border: 5px solid black;
+        border-radius: 50%;
+      }
+      .lefteye {
+        right: 52%;
+      }
+      .righteye {
+        left: 52%;
+      }
+      .eyeballleft {
+        left: 60%;
+      }
+      .eyeballright {
+        left: 40%;
+      }
+      .mouth {
+        position: absolute;
+        width: 120%;
+        height: 60px;
+        margin-top: 30px;
+      }
+      .nose {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: #b41147;
+        border-radius: 50%;
+        margin-top: 10px;
+      }
+	  .nose::after{
+		  content: '';
+		  width:2px;
+		  height:10px;
+		  position:absolute;
+		  background-color: black;
+		  left:50%;
+		  top:100%;
+		  transform:translateX(-50%);
+
+	  }
+      .noseshine {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.247);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        top: 40%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+      }
+      .trinket {
+        position: absolute;
+        top: 0;
+        width: 25px;
+        height: 25px;
+        background-color: rgb(243, 185, 26);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .trinketcenter {
+        position: absolute;
+        width: 0;
+        border: 3.5px solid #8a4904;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .trinketxaxis {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 4px;
+        background-color: #8a4904;
+      }
+      .trinketyaxis {
+        position: absolute;
+        width: 2px;
+        height: 50%;
+        background-color: #8a4904;
+        bottom: 0;
+      }
+      .legs {
+        background-color: #f5d6b4;
+        position: absolute;
+        bottom: 0%;
+        width: 20px;
+        height: 25px;
+        border-radius: 5px 5px 0px 0px;
+      }
+      .legs::before {
+        content: "";
+        background-color: white;
+        position: absolute;
+        width: 70px;
+        height: 20px;
+        border-radius: 10px;
+        left: 12px;
+        bottom: 0;
+        transform: translateY(50%);
+      }
+      .legs::after {
+        content: "";
+        background-color: white;
+        position: absolute;
+        width: 70px;
+        height: 20px;
+        border-radius: 10px;
+        right: 12px;
+        bottom: 0;
+        transform: translateY(50%);
+      }
+      .stomach {
+        position: absolute;
+        width: 100px;
+        height: 75px;
+        background-color: white;
+        border-radius: 50%;
+        bottom: 30px;
+      }
+      .pocket {
+        position: absolute;
+        width: 80px;
+        height: 65px;
+        border-bottom: 2px solid black;
+        border-radius: 50%;
+      }
+      .pocketopening {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 52%;
+        transform: translateY(-50%);
+        background-color: black;
+      }
+      .hand {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 80px solid #2d9cdb;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+      .palm {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: white;
+      }
+      .lefthand {
+        transform: rotate(130deg) translate(0px, 50px);
+      }
+      .righthand {
+        transform: rotate(-130deg) translate(-60px, 120px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="doremon middle">
+      <div class="face middle"></div>
+      <div class="body middle">
+        <div class="neck">
+          <div class="neckband">
+            <div class="mouthandnose middle">
+              <div class="eyes lefteye">
+                <div class="eyeball center eyeballleft"></div>
+              </div>
+              <div class="eyes righteye">
+                <div class="eyeball center eyeballright"></div>
+              </div>
+              <div class="nose middle">
+                <div class="noseshine center"></div>
+              </div>
+              <div class="mouth middle">
+                <svg width="100%" height="100%">
+                  <path
+                    d="M20,10
+								a10,10 0 1,0 -10,10
+								a150,150 0 0,1 120,0
+								a10,10 0 1,0 -10,-10
+								"
+                    style="stroke: black; stroke-width: 1; fill: white"
+                  />
+                  <path
+                    d="M20,18
+								a150,150 0 0,1 100,0
+								a50,35 0 0,1 -100,0
+								"
+                    style="stroke: #ff0000; stroke-width: 3; fill: #ff0000"
+                  />
+				  <line x1="61.25" x2="25.25" y1="5" y2="8" style="stroke:black;stroke-width:1"/>
+				  <line x1="61.25" x2="25.25" y1="3" y3="3" style="stroke:black;stroke-width:1"/>
+				  <line x1="81.25" x2="117.25" y1="3" y3="3" style="stroke:black;stroke-width:1"/>
+				  <line x1="81.25" x2="117.25" y1="5" y2="8" style="stroke:black;stroke-width:1"/>
+                </svg>
+              </div>
+            </div>
+            <div class="trinket middle">
+              <div class="trinketcenter"></div>
+              <div class="trinketxaxis"></div>
+              <div class="trinketyaxis middle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="hand lefthand">
+          <div class="palm center"></div>
+        </div>
+        <div class="hand righthand">
+          <div class="palm center"></div>
+        </div>
+        <div class="stomach middle">
+          <div class="pocket middle">
+            <div class="pocketopening"></div>
+          </div>
+        </div>
+        <div class="legs middle"></div>
+      </div>
+    </div>
+  </body>
+</html>
